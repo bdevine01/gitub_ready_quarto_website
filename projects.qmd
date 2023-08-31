@@ -1,0 +1,12 @@
+---
+title: "Projects"
+listing:
+  contents: projects
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+---
+
+Projects are different than posts. Projects should be more expansive, impressive and generally more professional in nature compared to posts. Posts can be works in progress. Small ideas or things you did that you thought were interesting. Projects should really showcase your professional abilities. You don't need to have too many, just make them good. And try to always have one "in the works" so that employers and collaborators can see that you're driven.

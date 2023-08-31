@@ -1,0 +1,28 @@
+---
+title: "Demo Site" # change this to your name
+image: images/linkedin_profile_picture.jpg # change to your profile pic
+about:
+  template: jolla # templates: jolla, trestles, solana, marquee, broadside
+  links: 
+    - icon: envelope
+      text: Contact Me
+      href: mailto:yourname@hamline.edu # change to your email
+    - icon: linkedin
+      href: https://linkedin.com. # change to your linkedin address
+    - icon: github
+      href: https://github.com # change to your github address
+    - icon: twitter
+      href: https://twitter.com # change to your twitter address
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+The page your viewing is the "index" page, or the landing page of your site. The site is just a quarto document. And you can put anything on it that could be in a quarto document.
+
+There are also settings to get a list of site items you may want people to have easy access to. For example, a list of your blog posts, projects, etc.
+
+There are different styles of landing pages. In this particular style, the `index.qmd` page is used as an about page. Instead of immediately showcasing your work, it showcases you! You can introduce yourself and include your contact information right by your image and description.
+
+You can then also decide to have some content show up below the about portion as well.

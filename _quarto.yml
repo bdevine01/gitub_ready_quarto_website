@@ -1,0 +1,42 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Demo Site"
+  favicon: images/personal_logo.png
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd # This is the main page. Don't delete!
+      - text: Posts
+        href: posts.qmd
+      - text: Projects
+        href: projects.qmd
+      - text: Resume
+        href: resume.qmd
+    right: 
+      - icon: github
+        href: https://github.com/ # change this to your github url
+      - icon: linkedin
+        href: https://www.linkedin.com # change this to your linkedin page
+      - icon: twitter
+        href: https://twitter.com/ # change this to your twitter
+    page-footer:
+      background: light
+      right: 
+        - icon: github
+          href: https://github.com/
+        - icon: linkedin
+          href: https://linkedin.com/
+        - icon: twitter
+          href: https://twitter.com/
+
+format:
+  html:
+    theme: yeti # for more themes see https://bootswatch.com/
+    css: styles.css # this file allows you to customize style
+    toc: true
+
+editor: visual
+

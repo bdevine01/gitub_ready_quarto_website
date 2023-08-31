@@ -1,0 +1,56 @@
+---
+title: "Demo Post 2"
+image: dtree.png
+author: Jane Doe
+date: "09-05-2023"
+categories: [decision trees, machine learning, arrests]
+---
+
+## Understanding the Data
+
+```{r}
+#| include: false
+# Load the required packages.
+library(tidyverse)
+library(rpart)
+library(rpart.plot)
+
+data("USArrests")
+```
+
+We are looking at arrests data by state. The data set has 50 rows (one for each state) and four variables.
+
+```{r}
+glimpse(USArrests)
+```
+
+Each of the variables are a numeric-continuous data type. We have arrests per 100,000 people for three violent crimes: assault, murder, and rape. We also have a column indicating the degree of urban population in that state. Before preceding with prediction, we note that tree-based techniques can be more unstable if the variables are too correlated with one another. We can also see if there are any extreme skews in the data.
+
+```{r}
+#| message: false
+library(GGally)
+ggpairs(USArrests)
+```
+
+We do see some positive relationships and stronger correlations, but mayne not quite enough to get us in trouble.
+
+Now lets try and predict `Murder` using the other features.
+
+```{r}
+dt = rpart(Murder ~.,
+           data=USArrests)
+rpart.plot(dt)
+```
+
+We can calculate a kind of R-squared measure of accuracy by squaring the correlation between the actual `Murder` values with our predicted ones.
+
+```{r}
+USArrests %>%
+  mutate(predicted_murder = predict(dt, USArrests)) %>%
+  select(Murder, predicted_murder) %>%
+  cor() -> corrmat
+
+rsq = corrmat[["Murder", "predicted_murder"]]^2
+print(paste("The r-square for our model is", round(rsq,2), sep=": "))
+  
+```
